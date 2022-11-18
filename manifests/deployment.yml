@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: lki 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lki
+  template:
+    metadata:
+      labels:
+        app: lki 
+    spec:
+      containers:
+        - name: lki 
+          image: mycontainerregistrynewtest1.azurecr.io/lki
+          ports:
+          - containerPort: 8080
